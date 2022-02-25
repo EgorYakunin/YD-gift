@@ -19,9 +19,9 @@ hbs.registerPartials(partialsPath)
 app.use(express.static(publicDir))
 
 app.get('', (req, res) => { 
-    const name = req.query.name;
+    const name = req.query.name
 
-    if (name == 'Dmitry' || 'Tim') { 
+    if ((name === 'Dmitry') || name === 'Tim') { 
         return res.render('index', {
             username: name
         })
