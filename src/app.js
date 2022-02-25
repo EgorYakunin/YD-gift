@@ -21,9 +21,14 @@ app.use(express.static(publicDir))
 app.get('', (req, res) => { 
     const name = req.query.name;
 
-    res.render('index', {
-        username: name
-    })
+    if (name == 'Dmitry' || 'Tim') { 
+        return res.render('index', {
+            username: name
+        })
+    }
+
+    res.status(404).send()
+
 })
 
 app.listen(port, () => { 
